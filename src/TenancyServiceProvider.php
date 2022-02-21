@@ -9,7 +9,7 @@ class TenancyServiceProvider extends ServiceProvider
 {
     public function register()
     {
-
+        $this->mergeConfigFrom(__DIR__.'/../config/tenancy.php', 'tenancy');
     }
 
     public function boot()

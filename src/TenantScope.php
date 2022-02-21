@@ -9,8 +9,10 @@ class TenantScope implements Scope
 {
     public function apply(Builder $builder, $model)
     {
-        if(auth()->user()->tenant_id != null) {
-            $builder->where('tenant_id', '=', auth()->user()->tenant_id);
+        $key = config('tenancy.key');
+
+        if(auth()->user()->$key != null) {
+            $builder->where($key, '=', auth()->user()->$key);
         }
     }
 
