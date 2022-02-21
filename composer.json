@@ -1,0 +1,38 @@
+{
+    "name": "veldman/laravel-tenancy",
+    "description": "description",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Corné Veldman",
+            "email": "cveldman@hotmail.com"
+        }
+    ],
+    "require": {
+        "laravel/framework": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Veldman\\Tenancy\\": "src/",
+            "Veldman\\Tenancy\\Factories\\": "database/factories/",
+            "Veldman\\Tenancy\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Veldman\\Tenancy\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Veldman\\Tenancy\\TenancyServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "orchestra/testbench": "^6.23"
+    }
+}
