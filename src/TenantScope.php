@@ -11,8 +11,11 @@ class TenantScope implements Scope
     {
         $key = config('tenancy.key');
 
-        if(auth()->user()->$key != null) {
-            $builder->where($key, '=', auth()->user()->$key);
+        // FIXME: Testen of dit scope op userprovider fixt
+        if(auth()->hasUser()) {
+            if (auth()->user()->$key != null) {
+                $builder->where($key, '=', auth()->user()->$key);
+            }
         }
     }
 
